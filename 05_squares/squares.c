@@ -23,11 +23,12 @@ int isInRange(int coord, int offset, int size) {
 int isAtBorder(int coord, int offset, int size) {
   // if coord is equal to offest or offset + size
   // return 1, else return 0
-  int upper_bd = offset + size;
-  if (coord == offset || coord == upper_bd){
+  if ((coord == offset) || ( coord == offset + size - 1)){
     return 1; 
   }
+  else{
   return 0;
+  }
 }
 
 int max(int x, int y){
@@ -59,10 +60,10 @@ void squares(int size1, int x_offset, int y_offset, int size2) {
       //    ((y is between y_offset and y_offset + size2) AND
       //     x is equal to either x_offset OR x_offset + size2 -1)
       // if so, print a *
-      int xrange = isInRange(x, x_offset, bd1);
-      int yborder = isAtBorder(y, y_offset, size2 - 1);
-      int yrange = isInRange(y, y_offset, bd2);
-      int xborder = isAtBorder(x, x_offset, size2 -1);
+      int xrange = isInRange(x, x_offset, size2);
+      int yborder = isAtBorder(y, y_offset, size2);
+      int yrange = isInRange(y, y_offset, size2);
+      int xborder = isAtBorder(x, x_offset, size2);
 
       int y_minus = size1 - 1;
       int x_minus = size1 - 1;
