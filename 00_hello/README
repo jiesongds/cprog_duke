@@ -4,9 +4,6 @@ is to create a file called "hello.txt" with one line
 in it, that says
 
 hello
-
-
-
 (1) Use emacs to open/create a file called hello.txt
      o Type C-x C-f (Control x, then Control f) [which opens
        a new file]
