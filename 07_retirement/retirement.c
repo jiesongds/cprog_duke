@@ -16,7 +16,6 @@ void retirement (int startAge,
 		 retire_info retired){
   double balance;
   int curr_age = startAge / 12;
-  printf("%d", curr_age);
   balance = initial;
   int curr_mon = startAge % 12;
   
