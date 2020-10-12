@@ -44,17 +44,17 @@ rectangle intersection(rectangle r1, rectangle r2) {
   r0.width = 0;
   r0.height = 0;
 
-  rectangle rh;
-  rectangle rw;
-  rh.x = 1;
-  rh.y = 0;
-  rh.width = 0;
-  rh.height = 1;
+  //rectangle rh;
+  //rectangle rw;
+  //rh.x = 1;
+  //rh.y = 0;
+  //rh.width = 0;
+  //rh.height = 1;
 
-  rw.x = 0;
-  rw.y = 1;
-  rw.width = 1;
-  rw.height = 0;
+  //rw.x = 0;
+  //rw.y = 1;
+  //rw.width = 1;
+  //rw.height = 0;
   
   int la = r1.x;
   int lb = r2.x;
@@ -74,15 +74,16 @@ rectangle intersection(rectangle r1, rectangle r2) {
   r.width = ri - l;
   r.height = t - b;
   
-  if (r.width < 0 && r.height <0){
+  if (r.width < 0 || r.height <0){
     return r0;
   }
-  else if (r.width == 0 && r.height != 0){
-    return rh;
-  }
-  else if (r.width != 0 && r.height == 0){
-    return rw;
-  }
+  //else if (r.width == 0 && r.height != 0){
+    
+  //return rh;
+  //}
+  //else if (r.width != 0 && r.height == 0){
+  //return rw;
+  //}
   else{
     return r;
   }
