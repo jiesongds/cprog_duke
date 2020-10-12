@@ -16,15 +16,74 @@ int max (int a, int b) {
 }
 
 //Declare your rectangle structure here!
-
+struct rect_t{
+  int x, y, width, height; 
+};
+typedef struct rect_t rectangle;
 
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
+  if (r.width <=0){
+    r.x = r.x + r.width;
+    r.width = -r.width;
+  }
+  if (r.height < 0){
+    r.y = r.y + r.height;
+    r.height = -r.height;
+  }
   return r;
 }
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
-  return r1;
+  rectangle r;
+  rectangle r0;
+  r0.x = 0;
+  r0.y = 0;
+  r0.width = 0;
+  r0.height = 0;
+
+  rectangle rh;
+  rectangle rw;
+  rh.x = 1;
+  rh.y = 0;
+  rh.width = 0;
+  rh.height = 1;
+
+  rw.x = 0;
+  rw.y = 1;
+  rw.width = 1;
+  rw.height = 0;
+  
+  int la = r1.x;
+  int lb = r2.x;
+  int ba = r1.y;
+  int bb = r2.y;
+  int ra = r1.x + r1.width;
+  int rb = r2.x + r2.width;
+  int ta = r1.y + r1.height;
+  int tb = r2.y = r2.height;
+
+  int l = max(la, lb);
+  int t = min(ta, tb);
+  int ri = min(ra, rb);
+  int b = max(ba, bb);
+
+  r.x = l;
+  r.y = b;
+  r.width = ri - l;
+  r.height = t - b;
+
+  if (r.width < 0 && r.height <0){
+    return r0;
+  }
+  else if (r.width == 0 && r.height != 0){
+    return rh;
+  }
+  else if (r.width != 0 && r.height == 0){
+    return rw;
+  }
+  else{
+    return r;}
 }
 
 //You should not need to modify any code below this line
