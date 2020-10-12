@@ -23,7 +23,7 @@ typedef struct rect_t rectangle;
 
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
-  if (r.width <=0){
+  if (r.width < 0){
     r.x = r.x + r.width;
     r.width = -r.width;
   }
@@ -35,6 +35,8 @@ rectangle canonicalize(rectangle r) {
 }
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
+  r1 = canonicalize(r1);
+  r2 = canonicalize(r2);
   rectangle r;
   rectangle r0;
   r0.x = 0;
@@ -61,8 +63,7 @@ rectangle intersection(rectangle r1, rectangle r2) {
   int ra = r1.x + r1.width;
   int rb = r2.x + r2.width;
   int ta = r1.y + r1.height;
-  int tb = r2.y = r2.height;
-
+  int tb = r2.y + r2.height;
   int l = max(la, lb);
   int t = min(ta, tb);
   int ri = min(ra, rb);
@@ -72,7 +73,7 @@ rectangle intersection(rectangle r1, rectangle r2) {
   r.y = b;
   r.width = ri - l;
   r.height = t - b;
-
+  
   if (r.width < 0 && r.height <0){
     return r0;
   }
@@ -83,7 +84,8 @@ rectangle intersection(rectangle r1, rectangle r2) {
     return rw;
   }
   else{
-    return r;}
+    return r;
+  }
 }
 
 //You should not need to modify any code below this line
