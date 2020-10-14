@@ -1,10 +1,4 @@
-Grading at Wed Oct 14 02:52:19 UTC 2020
-I expected to find a file called 'input.txt' but it did not exist
-(or was not a regular file)
-Here are the files that I can find:
-game
-game.c
-inputs.txt
-README
+Grading at Wed Oct 14 02:56:16 UTC 2020
+Your file matched the expected output
 
-Overall Grade: FAILED
+Overall Grade: PASSED
