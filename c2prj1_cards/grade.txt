@@ -1,0 +1,14 @@
+Grading at Wed Oct 14 16:14:39 UTC 2020
+Compiling cards.c
+cards.c: In function ‘card_from_letters’:
+cards.c:104:21: error: ‘value_1’ undeclared (first use in this function)
+     int let_value = value_1 - '0';
+                     ^
+cards.c:104:21: note: each undeclared identifier is reported only once for each function it appears in
+cards.c:103:10: error: unused variable ‘value_l’ [-Werror=unused-variable]
+     char value_l = value_let;
+          ^
+cc1: all warnings being treated as errors
+Could not compile your card.c!
+
+Overall Grade: FAILED
