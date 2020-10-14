@@ -100,8 +100,7 @@ card_t card_from_letters(char value_let, char suit_let) {
     temp.value = 10;
   }
   else{
-    char value_l = value_let;
-    int let_value = value_1 - '0';
+    int let_value = value_let - '0';
     temp.value = let_value;
   }
 
