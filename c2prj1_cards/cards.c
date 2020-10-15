@@ -127,6 +127,27 @@ card_t card_from_letters(char value_let, char suit_let) {
 
 card_t card_from_num(unsigned c) {
   card_t temp;
+  int suit_level;
+  int value_level;
+  
+  if (c < 13){
+    temp.value = c + 2;
+    temp.suit = SPADES;
+  }
+  else {
+    suit_level = c / 13;
+    value_level = c % 13;
+    temp.value = value_level + 2;
+    if (suit_level == 1){
+      temp.suit = HEARTS;
+    }
+    else if (suit_level ==2){
+      temp.suit = DIAMONDS;
+    }
+    else if (suit_level ==3){
+      temp.suit = CLUBS;
+    }
+  }
   return temp;
 }
 
