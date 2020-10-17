@@ -15,7 +15,7 @@ size_t maxSeq(int * array, size_t n){
   int cur_low = array[0];
   size_t cur_bst_lng = 1;
   
-  for (size_t i = 1; i < n; i++) {
+  for (size_t i = 0; i < n; i++) {
     int cur_value = array[i];
     if (cur_value > cur_low){
       ans++;
