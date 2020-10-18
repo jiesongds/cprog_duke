@@ -21,6 +21,9 @@ size_t maxSeq(int *array, size_t n){
     int cur_value = array[i];
     if (cur_value > cur_low){
       bst_lng++;
+      if ((i == n-1) && bst_lng > cur_bst_lng){
+	cur_bst_lng = bst_lng;
+      }
     }
     else{
       if (bst_lng > cur_bst_lng){
