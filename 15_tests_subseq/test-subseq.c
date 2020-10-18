@@ -3,13 +3,14 @@
 
 size_t maxSeq(int * array, size_t n);
 
-void main() {
+int main() {
 
   int ar1[] = {1,2,3};
   size_t t1;
   t1 = maxSeq(ar1, 3);
   if (t1 != 3) {
-    // printf("some errors occur");
+    printf("failing case is %d", 1);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
@@ -17,23 +18,25 @@ void main() {
   size_t t2;
   t2 = maxSeq(ar2, 4);
   if (t2 != 4) {
-    //printf("some errors occur");
+    printf("failing case is %d", 2);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
-  int ar3[] = {};
-  size_t t3;
-  t3 = maxSeq(ar3, 0);
-  if (t3 != 0) {
+  //int ar3[] = {};
+  //size_t t3;
+  //t3 = maxSeq(ar3, 0);
+  //if (t3 != 0) {
     //printf("some errors occur");
-    exit(EXIT_FAILURE);
-  }
+    //exit(EXIT_FAILURE);
+  //}
 
   int ar4[] = {0, 0,0,0, 0, 0, 0, 0, 0, 0};
   size_t t4;
   t4 = maxSeq(ar4, 10);
   if (t4 != 1) {
-    //printf("some errors occur");
+    printf("failing case is %d", 4);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
@@ -41,7 +44,8 @@ void main() {
   size_t t5;
   t5 = maxSeq(ar5, 5);
   if (t5 != 5) {
-    //printf("some errors occur");
+    printf("failing case is %d", 5);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
@@ -49,7 +53,8 @@ void main() {
   size_t t6;
   t6 = maxSeq(ar6, 4);
   if (t6 != 1) {
-    //printf("some errors occur");
+    printf("failing case is %d", 6);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
@@ -57,23 +62,25 @@ void main() {
   size_t t7;
   t7 = maxSeq(ar7, 6);
   if (t7 != 1) {
-    //printf("some errors occur");
+    printf("failing case is %d", 7);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
-  unsigned int ar8[] = {300, -3, -2, -1, 3, 5, 2,1};
-  size_t t8;
-  t8 = maxSeq(ar8, 8);
-  if (t8 != 5) {
+  //unsigned int ar8[] = {300, -3, -2, -1, 3, 5, 2,1};
+  //size_t t8;
+  //t8 = maxSeq(ar8, 8);
+  //if (t8 != 5) {
     //printf("some errors occur");
-    exit(EXIT_FAILURE);
-  }
+    //exit(EXIT_FAILURE);
+  //}
 
   int ar9[] = {5, 6, 7, 7, 7, 8, 9, 2, 3};
   size_t t9;
   t9 = maxSeq(ar9, 9);
   if (t9 != 3) {
-    //printf("some errors occur");
+    printf("failing case is %d", 9);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }  
 
@@ -81,7 +88,8 @@ void main() {
   size_t t10;
   t10 = maxSeq(ar10, 11);
   if (t10 != 6) {
-    //printf("some errors occur");
+    printf("failing case is %d", 10);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
@@ -89,7 +97,8 @@ void main() {
   size_t t11;
   t11 = maxSeq(ar11, 10);
   if (t11 != 4) {
-    //printf("some errors occur");
+    printf("failing case is %d", 11);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
@@ -97,7 +106,8 @@ void main() {
   size_t t12;
   t12 = maxSeq(ar12, 10);
   if (t12 != 2) {
-    //printf("some errors occur");
+    printf("failing case is %d", 12);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
@@ -105,12 +115,14 @@ void main() {
   size_t t13;
   t13 = maxSeq(ar13, 7);
   if (t13 != 4) {
-    //printf("some errors occur");
+    printf("failing case is %d", 13);
+    printf("some errors occur");
     exit(EXIT_FAILURE);
   }
 
 
+  printf("passed!");
   
-  exit(EXIT_SUCCESS);
- 
+
+  return EXIT_SUCCESS; 
 }
