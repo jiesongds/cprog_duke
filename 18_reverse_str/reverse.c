@@ -4,6 +4,20 @@
 
 void reverse(char * str) {
   //WRITE ME!
+  // first count the index of the original string
+  int index = 0;
+  char *p0 = str;
+  while (*p0 != '\0') {
+    p0++;
+    index++;
+  }
+
+  // print the result in a reversed manner 
+  while (index >= 0) {
+    printf("%c", *p0);
+    p0--;
+    index--;
+  }
 }
 
 int main(void) {
