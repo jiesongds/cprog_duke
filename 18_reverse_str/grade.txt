@@ -1,31 +1,18 @@
-Grading at Mon Oct 19 03:03:53 UTC 2020
+Grading at Mon Oct 19 05:03:14 UTC 2020
 Attempting to compile  reverse.c
-Binary files temp.txt and /dev/fd/4 differ
-Could not compare your output to the expected output 
-(explaination should be above)
-Your output did not match what we expected.
+Your file matched the expected output
+Your output matched what we expected
 Removing your main() and replacing it with our own to run more tests...
 #################################################
 testcase2:
- - Your program segfaulted.
-your code failed the testcase
-#################################################
+nullptr#################################################
 testcase3:
-Binary files temp2.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
-your code failed the testcase
+Your file matched the expected output
 #################################################
 testcase4:
-Binary files temp2.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
-your code failed the testcase
+Your file matched the expected output
 #################################################
 testcase5:
-Binary files temp2.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
-your code failed the testcase
+Your file matched the expected output
 
-Overall Grade: F
+Overall Grade: A
