@@ -18,6 +18,7 @@ void reverse(char * str) {
     p0--;
     index--;
   }
+  printf("\n");
 }
 
 int main(void) {
@@ -31,7 +32,7 @@ int main(void) {
   char * array[] = {str0, str1, str2, str3, str4, str5, str6};
   for (int i = 0; i < 7; i++) {
     reverse(array[i]);
-    printf("%s\n", array[i]);
+    //printf("%s\n", array[i]);
   }
   return EXIT_SUCCESS;
 }
