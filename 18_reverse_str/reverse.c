@@ -4,21 +4,41 @@
 
 void reverse(char * str) {
   //WRITE ME!
-  // first count the index of the original string
-  int index = 0;
-  char *p0 = str;
-  while (*p0 != '\0') {
-    p0++;
-    index++;
+  if (str == NULL) {
+    return ;
   }
+  else {
+    int length = 1;
+    char *p0 = str;
+    while (*p0 != '\0') {
+      p0++;
+      length++;
+    }
 
-  // print the result in a reversed manner 
-  while (index >= 0) {
-    printf("%c", *p0);
-    p0--;
-    index--;
+    char tem[length];
+    strcpy(tem, str);
+
+    char *pt = tem;
+    while (*pt != '\0') {
+      pt++;
+    }
+
+    //char restr[length];
+    int i = 0;
+    while (length >= 1) {
+      if (*pt == '\0') {
+	pt--;
+	length--;
+	continue;
+      }
+      else {
+	str[i] = *pt;
+	pt--;
+	length--;
+	i++;
+      }
+    }
   }
-  printf("\n");
 }
 
 int main(void) {
@@ -32,7 +52,7 @@ int main(void) {
   char * array[] = {str0, str1, str2, str3, str4, str5, str6};
   for (int i = 0; i < 7; i++) {
     reverse(array[i]);
-    //printf("%s\n", array[i]);
+    printf("%s\n", array[i]);
   }
   return EXIT_SUCCESS;
 }
