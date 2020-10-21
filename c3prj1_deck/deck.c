@@ -27,19 +27,19 @@ int deck_contains(deck_t * d, card_t c) {
 
 void shuffle(deck_t * d){
   card_t **card_ptr = d->cards;
-  size_t ncards = d->n_cards;
+  int ncards = d->n_cards;
  
  
-  size_t up = ncards-1;
+  //size_t up = ncards-1;
 
-  if (ncards % 2 ==0){
-    ncards = ncards-1;
-  }
+  //if (ncards % 2 ==0){
+    //ncards = ncards-1;
+    //}
   
-  for (size_t k=0; k < ncards; k++) {
-    size_t rd_off = rand()%up;
+  for (int k=0; k < ncards; k++) {
+    int rd_off = rand()%ncards;
     while (rd_off == k) {
-      rd_off = rand()%up;
+      rd_off = rand()%ncards;
       }
     card_t *temp = card_ptr[k];
     card_ptr[k] = card_ptr[rd_off];
