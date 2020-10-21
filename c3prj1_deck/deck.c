@@ -28,57 +28,24 @@ int deck_contains(deck_t * d, card_t c) {
 void shuffle(deck_t * d){
   card_t **card_ptr = d->cards;
   size_t ncards = d->n_cards;
-  //card_t **temp = d->cards; // build a tem deck of cards 
-  //for (size_t i = 0;  i < ncards; i++){
-  //temp++;
-  //}
+ 
+ 
   size_t up = ncards-1;
+
+  if (ncards % 2 ==0){
+    ncards = ncards-1;
+  }
+  
   for (size_t k=0; k < ncards; k++) {
     size_t rd_off = rand()%up;
     while (rd_off == k) {
       rd_off = rand()%up;
-    }
-    //printf("rand is %d\n", rd_off);
-    //printf("current index is %ld\n", k);
-    //card_t mycard = *card_ptr[k];
-    //printf("current card value is %d\n", mycard.value);
-    //print_card(mycard);
-    //printf("\n");
+      }
     card_t *temp = card_ptr[k];
     card_ptr[k] = card_ptr[rd_off];
-    //card_t mycard2 = *card_ptr[k];
-    //print_card(mycard2);
-    //printf("\n");
     card_ptr[rd_off] = temp;
-  }
-
-
-
-
-  //}
-  
-  //size_t k = 0;
-  //for (size_t j = ncards-1; j >= 0; j--) {
-  //int rd = rand() % 100;
-  //if (rd >= 50 && k < ncards/2) {
-  //card_t temp_c = **card_ptr;
-      
-  //print_card(temp_c);
-      //printf(" ");
-      //print_card(**temp);
-      
-      //**card_ptr = **temp;
-      //size_t offset = j - k;
-      //**card_ptr = **(card_ptr + offset);
-      //print_card(**card_ptr);
-      //printf(" ");
-      //**(card_ptr + offset) = temp_c;
-      //print_card(temp_c);
-  //}
-  //card_ptr++;
-  //k++;
-    //temp--;
-  //}
+    }
+   
 }
 
 void assert_full_deck(deck_t * d) {
