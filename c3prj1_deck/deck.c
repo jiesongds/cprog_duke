@@ -38,9 +38,6 @@ void shuffle(deck_t * d){
   
   for (int k=0; k < ncards; k++) {
     int rd_off = rand()%ncards;
-    while (rd_off == k) {
-      rd_off = rand()%ncards;
-      }
     card_t *temp = card_ptr[k];
     card_ptr[k] = card_ptr[rd_off];
     card_ptr[rd_off] = temp;
