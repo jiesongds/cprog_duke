@@ -261,6 +261,9 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   hand_eval_t h1 = evaluate_hand(hand1);
   hand_eval_t h2 = evaluate_hand(hand2);
 
+  //printf("%s, hand 1\n", ranking_to_string(h1.ranking));
+  //printf("%s, hand 2\n", ranking_to_string(h2.ranking));
+  
   if (h1.ranking < h2.ranking) {
     return 1;
   }
@@ -270,10 +273,11 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   else {
     size_t idx = 0;
     while (idx<5){
-      if (hand1->cards[idx]->value == hand2->cards[idx]->value){
+      if (h1.cards[idx]->value == h2.cards[idx]->value){
+	//printf("%d\n", h1.cards[idx]->value);
 	idx++;
       }
-      else if (hand1->cards[idx]->value > hand2->cards[idx]->value){
+      else if (h1.cards[idx]->value > h2.cards[idx]->value){
 	return 1;
       }
       else {
