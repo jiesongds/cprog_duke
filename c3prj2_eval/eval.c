@@ -58,8 +58,9 @@ unsigned get_largest_element(unsigned * arr, size_t n) {
   unsigned cur_max = arr[0];
   unsigned fin_max = arr[0];
   for (size_t i=0; i<n; i++) {
-    if (i == n-1 && cur_max > fin_max) {
-      fin_max = cur_max;
+    if (i == n-1) {
+      if (cur_max > fin_max){
+	fin_max = cur_max;}
     }
     else if (arr[i+1] > arr[i]) {
       cur_max = arr[i+1];
