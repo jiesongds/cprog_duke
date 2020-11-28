@@ -1,2 +1,2 @@
-breaker: break.c
-	gcc -o breaker break.c
+breaker: breaker.c
+	gcc -o breaker breaker.c
