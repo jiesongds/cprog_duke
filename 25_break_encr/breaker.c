@@ -24,7 +24,7 @@ int main(int argc, char ** argv) {
 
     int counter = 0;
     
-    while ((c = fgetc(f)) != EOF && counter <=5000)
+    while ((c = fgetc(f)) != EOF && counter <=500)
     {
       if (!isalpha(c) || !islower(c)){
 	continue;
