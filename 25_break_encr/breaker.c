@@ -24,12 +24,11 @@ int main(int argc, char ** argv) {
 
     int counter = 0;
     
-    while ((c = fgetc(f)) != EOF && counter <=500000)
+    while ((c = fgetc(f)) != EOF)
     {
       if (isalpha(c)){
         c = tolower(c);
         freq_count[c-97]++;
-        counter++;
       }
     }
     
