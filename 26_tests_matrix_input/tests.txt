@@ -1,1 +1,3 @@
 ./rot_matrix test1.txt
+./rot_matrix test2.txt
+./rot_matrix test3.txt
