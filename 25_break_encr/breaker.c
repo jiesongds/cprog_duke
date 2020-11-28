@@ -16,7 +16,7 @@ int main(int argc, char ** argv) {
         return EXIT_FAILURE;
     }
 
-    char letters[26] = "abcdefghijklmnopqrstuvwxyz"; 
+    //char letters[26] = "abcdefghijklmnopqrstuvwxyz"; 
 
     int freq_count[26] = {0}; 
 
@@ -29,12 +29,7 @@ int main(int argc, char ** argv) {
       if (!isalpha(c) || !islower(c)){
 	continue;
       }
-      for (int i = 0; i<26; i++) {
-            if (letters[i] == c) {
-                freq_count[i]++;
-                break; 
-            }
-        }
+      freq_count[c-97]++;
       counter++;
     }
     
