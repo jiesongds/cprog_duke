@@ -22,9 +22,12 @@ int main(int argc, char ** argv) {
 
     int c; 
 
-    while ((c = fgetc(f)) != EOF)
+    int counter = 0;
+    
+    while ((c = fgetc(f)) != EOF && counter <=529000)
     {
       if (!isalpha(c)){
+	counter++;
 	continue;
       }
       for (int i = 0; i<26; i++) {
@@ -33,6 +36,7 @@ int main(int argc, char ** argv) {
                 break; 
             }
         }
+      counter++;
     }
     
     fclose(f); 
