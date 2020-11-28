@@ -55,7 +55,7 @@ int main(int argc, char ** argv) {
 
     int key = (max_index + 22) % 26; 
 
-    if (key <0 || k >= 26) {
+    if (key <0 || key >= 26) {
       fprintf(stderr, "Wrong Key\n");
       return EXIT_FAILURE;
     }
