@@ -24,7 +24,10 @@ int main(int argc, char ** argv) {
 
     while ((c = fgetc(f)) != EOF)
     {
-        for (int i = 0; i<26; i++) {
+      if (!isalpha(c)){
+	continue;
+      }
+      for (int i = 0; i<26; i++) {
             if (letters[i] == c) {
                 freq_count[i]++;
                 break; 
