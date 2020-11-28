@@ -24,7 +24,7 @@ int main(int argc, char ** argv) {
 
     int counter = 0;
     
-    while ((c = fgetc(f)) != EOF && counter <=500)
+    while ((c = fgetc(f)) != EOF && counter <=5000000)
     {
       if (!isalpha(c) || !islower(c)){
 	continue;
@@ -41,17 +41,12 @@ int main(int argc, char ** argv) {
     //}
 
     int max_count = freq_count[0];
+    int max_index = 0;
     
     for (int j = 1; j<26; j++) {
         if (freq_count[j] > max_count) {
-            max_count = freq_count[j]; 
-        }
-    }
-    int max_index; 
-    for (int i = 0; i<26; i++) {
-        if (freq_count[i] == max_count) {
-            max_index = i;
-            break;
+            max_count = freq_count[j];
+	    max_index = j;
         }
     }
 
