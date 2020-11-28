@@ -24,7 +24,7 @@ int main(int argc, char ** argv) {
 
     int counter = 0;
     
-    while ((c = fgetc(f)) != EOF && counter <=5000000)
+    while ((c = fgetc(f)) != EOF && counter <=500000)
     {
       if (!isalpha(c) || !islower(c)){
 	continue;
@@ -55,6 +55,11 @@ int main(int argc, char ** argv) {
 
     int key = (max_index + 22) % 26; 
 
+    if (key <0 || k >= 26) {
+      fprintf(stderr, "Wrong Key\n");
+      return EXIT_FAILURE;
+    }
+    
     printf("%d\n", key); 
 
     return EXIT_SUCCESS; 
