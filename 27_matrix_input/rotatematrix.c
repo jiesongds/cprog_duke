@@ -42,14 +42,36 @@ int main(int argc, char** argv ) {
             return EXIT_FAILURE;
         }
         
+        char* ptr = char_line;
+        int counter = 0;
+        while (*ptr != '\0') {
+            ptr++;
+            counter++;
+        }   
+
+        //printf("%d\t", counter);
+        
+
+        if (counter != 11) {
+            printf("line is too short\n");
+            return EXIT_FAILURE;
+        }
+
         for (int j=0; j<10; j++) {
             org_mx[k][j] = char_line[j];
-            printf("%c", org_mx[k][j]);
-            if (j == 9) {
-                printf("\n");
-            }
+            //printf("%c", org_mx[k][j]);
+            //if (j == 9) {
+                //printf("\n");
+            //}
         }
         k++;
+    }
+    
+    //printf("\n");
+
+    if (k != 10) {
+        printf("File length is wrong\n");
+        return EXIT_FAILURE;
     }
 
     //printf("\nAfter rotation\n");
