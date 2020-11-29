@@ -38,7 +38,7 @@ int main(int argc, char** argv ) {
 
     while (fgets(char_line, 12, f) != NULL) {
         if (strchr(char_line, '\n') == NULL) {
-            printf("Improper line\n");
+            fprintf(stderr, "Improper line\n"); 
             return EXIT_FAILURE;
         }
         
@@ -53,7 +53,7 @@ int main(int argc, char** argv ) {
         
 
         if (counter != 11) {
-            printf("line is too short\n");
+            fprintf(stderr, "line is too short\n");
             return EXIT_FAILURE;
         }
 
@@ -70,7 +70,7 @@ int main(int argc, char** argv ) {
     //printf("\n");
 
     if (k != 10) {
-        printf("File length is wrong\n");
+        fprintf(stderr, "File length is wrong\n");
         return EXIT_FAILURE;
     }
 
