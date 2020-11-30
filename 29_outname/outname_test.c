@@ -9,6 +9,10 @@ int main(void) {
 				 "anotherTestFileName.txt",
 				 "somethingelse"};
   
+  //char * outName = computeOutputFileName(testNames[0]);
+  //printf("'%s'\n", outName);
+  //free(outName);
+
   for (int i = 0; i < NUM_TESTS; i++) {
     char * outName = computeOutputFileName(testNames[i]);
     printf("'%s' => '%s'\n", testNames[i], outName);
