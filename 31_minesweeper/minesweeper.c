@@ -135,6 +135,7 @@ int countMines(board_t * b, int x, int y) {
       }
     }
   }
+  printf("find total mines: %d\n", ct); 
   return ct;
 }
 int click (board_t * b, int x, int y) {
@@ -157,6 +158,7 @@ int click (board_t * b, int x, int y) {
 }
 
 int checkWin(board_t * b) {
+  //WRITE ME!
   for (int r=0; r<b->height; r++) {
     for (int c=0; c<b->width; c++) {
       if (b->board[r][c] == UNKNOWN) {
