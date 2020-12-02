@@ -53,7 +53,7 @@ void printCounts(counts_t * c, FILE * outFile) {
     fprintf(outFile, "%s: %ld\n", c->ct[i]->value, c->ct[i]->count);
   }
   if (c->unknown_ct >0) {
-    fprintf(outFile, "<unknown>: %ld\n", c->unknown_ct);
+    fprintf(outFile, "<unknown> : %ld\n", c->unknown_ct);
   }
 }
 
