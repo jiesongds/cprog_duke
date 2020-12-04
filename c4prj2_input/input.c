@@ -102,7 +102,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
             return NULL;
         }
         if ((largest_n >= 10) || (largest_n > ahand->n_cards)) {
-            fprintf(stderr, "Too many unknown cards\n");
+	  fprintf(stderr, "The largest n is %d. Too many unknown cards\n", largest_n);
             return NULL; 
         }
         rd_hds = realloc(rd_hds, (*n_hands + 1) * sizeof(*rd_hds));
