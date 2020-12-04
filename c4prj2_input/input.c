@@ -96,7 +96,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
             fprintf(stderr, "Must have at least 5 cards\n");
             return NULL;
         }
-        if (largest_n > ahand->n_cards) {
+        if (largest_n >= 10) {
             fprintf(stderr, "Too many unknown cards\n");
             return NULL; 
         }
