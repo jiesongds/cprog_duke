@@ -8,6 +8,28 @@
 #include "future.h"
 #include "input.h"
 
+void actScore(deck_t ** hands, size_t n_hands, int * win_arr){
+  size_t bt_hd_idex = 0;
+  int comp_res = 0;
+  int tie_flag = 0;
+
+  for(size_t j=1; j<n_hands; j++){
+    comp_res = compare_hands(hands[bt_hd_idex],hands[j]);
+    if(comp_res == -1){
+      bt_hd_idex = j;
+      tie_flag = 0;
+    }
+    if(comp_res == 0){
+      tie_flag = 1;
+    }
+  }
+  if(tie_flag){
+    win_arr[n_hands]++;
+  }else{
+    win_arr[bt_hd_idex]++;
+  }
+}
+
 int main(int argc, char ** argv) {
   //YOUR CODE GOES HERE
   if (argc < 2) {
@@ -41,26 +63,27 @@ int main(int argc, char ** argv) {
   for (int i=0; i<trials; i++) {
     shuffle(rem_deck);
     future_cards_from_deck(rem_deck, fc); 
-    deck_t * cur_win_hand = readin_hands[0]; 
-    size_t cur_win_idx = 0;
-    size_t no_ties = 0; 
-    for (size_t j=0; j<n_hands; j++) {
-      if (compare_hands(cur_win_hand, readin_hands[j]) < 0) {
-        cur_win_hand = readin_hands[j];
-        cur_win_idx = j; 
-      }
-    }
-    for (size_t j=0; j<n_hands; j++) {
-      if (compare_hands(cur_win_hand, readin_hands[j]) == 0) {
-        no_ties++;
-      }
-    }
-    if (no_ties >= 2) {
-      counts[n_hands]++;
-    }
-    else {
-      counts[cur_win_idx]++;
-    }
+    actScore(readin_hands, n_hands, counts);
+    //deck_t * cur_win_hand = readin_hands[0]; 
+    //size_t cur_win_idx = 0;
+    //size_t no_ties = 0; 
+    //for (size_t j=0; j<n_hands; j++) {
+      //if (compare_hands(cur_win_hand, readin_hands[j]) < 0) {
+        //cur_win_hand = readin_hands[j];
+        //cur_win_idx = j; 
+      //}
+    //}
+    //for (size_t j=0; j<n_hands; j++) {
+      //if (compare_hands(cur_win_hand, readin_hands[j]) == 0) {
+        //no_ties++;
+      //}
+    //}
+    //if (no_ties >= 2) {
+      //counts[n_hands]++;
+    //}
+    //else {
+      //counts[cur_win_idx]++;
+    //}
   }
 
   for (size_t i=0; i<n_hands; i++) {
