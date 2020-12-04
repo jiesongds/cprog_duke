@@ -28,6 +28,29 @@ int main(int argc, char** argv) {
         printf("\n");
     }
 
+    deck_t * full;
+    full = malloc(sizeof(*full));
+    full->n_cards = 0;
+    full->cards = NULL; 
+    for (size_t i = 0; i<52; i++) {
+        card_t c = card_from_num(i);
+        add_card_to(full, c);
+    }
+
+    shuffle(full);
+    shuffle(full);
+
+    print_hand(full);
+
+    printf("\n"); 
+
+    future_cards_from_deck(full, fc); 
+
+    for (size_t i=0; i<n_hand;i++) {
+        print_hand(read_hands[i]);
+        printf("\n");
+    }
+
     for (size_t i = 0; i<fc->n_decks; i++) {
         free(fc->decks[i].cards); 
     }
@@ -39,6 +62,7 @@ int main(int argc, char** argv) {
     }
 
     free(read_hands); 
+    free_deck(full); 
 
     if (fclose(f) != 0) {
         fprintf(stderr, "Could not close the file\n");
