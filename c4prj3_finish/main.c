@@ -87,7 +87,7 @@ int main(int argc, char ** argv) {
   }
 
   for (size_t i=0; i<n_hands; i++) {
-    printf("Hand %zu won %u / %u times (%.2f%%)\n", i, counts[i], trials, 100 * (float) counts[i] / (float) trials);
+    printf("Hand %zu won %u / %u times (%.2f%%)\n", i, counts[i], trials, (100.0 * counts[i]) / (float) trials);
   }
   printf("And there were %u ties\n", counts[n_hands]);
 
