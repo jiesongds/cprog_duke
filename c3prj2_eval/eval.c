@@ -106,7 +106,7 @@ ssize_t  find_secondary_pair(deck_t * hand,
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
   size_t ncards = hand->n_cards;
   int is_five = 0;
-  size_t marker;
+  size_t marker = 0;
 
   for (size_t i = index+1; i<ncards; i++){
     if(hand->cards[i]->value == 5){
