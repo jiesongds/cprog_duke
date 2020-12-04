@@ -73,7 +73,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
     }
     free(line);
     line=NULL; 
-
+    //printf("The largest n is %d\n", largest_n);
     if (largest_n >=0) {
         size_t capacity = largest_n; 
         if (capacity>=fc->n_decks) {
@@ -85,7 +85,9 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
             }
         }
     }
-     
+    if (largest_n<0) {
+        largest_n = 0;
+    } 
     rewind(f); 
     while (getline(&line, &sz, f) >= 0 ) {
         stripNewline(line);
