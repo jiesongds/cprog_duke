@@ -88,8 +88,13 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
     if (largest_n<0) {
         largest_n = 0;
     } 
-    rewind(f); 
+    rewind(f);
     while (getline(&line, &sz, f) >= 0 ) {
+        if (*line == '\n') {
+            free(line);
+            line=NULL;
+            continue; 
+        }
         stripNewline(line);
         deck_t * ahand = hand_from_string(line, fc);
         if (ahand->n_cards<5) {
