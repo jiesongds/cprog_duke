@@ -8,28 +8,6 @@
 #include "future.h"
 #include "input.h"
 
-//void actScore(deck_t ** hands, size_t n_hands, int * win_arr){
-  //size_t bt_hd_idex = 0;
-  //int comp_res = 0;
-  //int tie_flag = 0;
-
-  //for(size_t j=1; j<n_hands; j++){
-    //comp_res = compare_hands(hands[bt_hd_idex],hands[j]);
-    //if(comp_res == -1){
-      //bt_hd_idex = j;
-      //tie_flag = 0;
-    //}
-    //if(comp_res == 0){
-      //tie_flag = 1;
-    //}
-  //}
-  //if(tie_flag){
-    //win_arr[n_hands]++;
-  //}else{
-    //win_arr[bt_hd_idex]++;
-  //}
-//}
-
 int main(int argc, char ** argv) {
   //YOUR CODE GOES HERE
   if (argc < 2) {
@@ -67,20 +45,16 @@ int main(int argc, char ** argv) {
   for (int i=0; i<trials; i++) {
     shuffle(rem_deck);
     future_cards_from_deck(rem_deck, fc); 
-    //actScore(readin_hands, n_hands, counts);
-    winnerIdx = 0;
+    finalIdx = 0;
     tie = 0;
 
     for (size_t j = 1; j < n_hands; j++) {
-      compRes = compare_hands(readin_hands[winnerIdx], readin_hands[j]);
-      /*if (compRes > 0) {
-	  windex[winnerIdx]++;
-	  }*/
+      compRes = compare_hands(readin_hands[finalIdx], readin_hands[j]);
 	    if (compRes == 0) {
 	    tie = 1;
 	    }
 	    else if (compRes < 0) {
-	      winnerIdx = j;
+	      finalIdx = j;
 	      tie = 0;
 	    }
     }
@@ -88,7 +62,7 @@ int main(int argc, char ** argv) {
       counts[n_hands]++;
     }
     else {
-      counts[winnerIdx]++;
+      counts[finalIdx]++;
     }
 
 
